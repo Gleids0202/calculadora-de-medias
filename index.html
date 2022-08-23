@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semafaro</title>
+    <style>
+        *{
+
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+.cont{
+
+width:100vw:
+height:100vh;
+}
+
+.container{
+width:100vw;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding-bottom:120px;
+background-color:white;}
+
+.buttons{
+width:100%;
+padding:0 auto;
+text-align:center;
+padding-top:50px;
+}
+.buttons button{
+width:90px;
+height:40px;
+font-size:14px;
+color:white;
+
+}
+#ver{
+background-color:black;
+color:white;
+font-weight:600;
+border-radius:4px;
+width:200px;
+}
+
+
+
+#content{
+width:80vw;
+height:60vh;
+background-color:black;
+margin:50px auto;
+border-radius:5px;
+padding-left:10px;
+color:white;
+padding-top:20px;
+}
+
+h1{
+text-align:center;
+margin-top:30px;
+}
+    </style>
+</head>
+<body>
+
+<div class="cont">
+<h1>Bem vindo a Calculadora de médias escolar </h1>
+    <main class="container">
+        <div class="imagem">
+            <img src="images/desligado.png" alt="">
+        </div>
+        <div class="buttons">
+            <button onclick="verm()" id="ver">Calcular Média</button>
+          
+<div id="content">
+Resultado...
+</div>
+    </main>
+    </div>
+<script> 
+function verm(){
+var nome=prompt("qual o nome do aluno?")
+let n1=Number(prompt(`qual foi a primerira nota de ${nome}?`))
+let n2=Number(prompt(`Além de ${n1}, qual foi a outra nota de ${nome}?`))
+var res=document.getElementById("content")
+res.innerHTML=`calculando a média final de <mark>${nome}</mark>. <br> <br>
+As notas obtidas foram <mark>${n1}</mark> e <mark>${n2}</mark>   <br> <br>
+A média final será <mark>${(n1+n2)/2}</mark>
+<br> <br>
+`
+if (n1+n2 >=6 ){
+res.innerHTML+="A mensagem que temos é: <mark>Meus parabéns!</mark>"
+}
+else{
+res.innerHTML+="A mensagem que temos é: <mark>Estude  um pouco mais!</mark>"
+}
+}
+
+
+</script>
+</body>
+</html>
